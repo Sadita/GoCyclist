@@ -14,14 +14,7 @@ namespace GoCyclist.Areas.Identity
     {
         public void Configure(IWebHostBuilder builder)
         {
-            builder.ConfigureServices((context, services) =>
-            {
-                // services.AddDbContext<GoCyclistContext>(options =>
-                //     options.UseSqlite(
-                //         context.Configuration.GetConnectionString("GoCyclistContextConnection")));
-
-                services.AddDefaultIdentity<Cyclist>()
-                    .AddEntityFrameworkStores<GoCyclistContext>();
+            builder.ConfigureServices((context, services) => {
             });
         }
     }

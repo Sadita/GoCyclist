@@ -36,6 +36,8 @@ namespace GoCyclist
             services.AddDbContext<GoCyclistContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("GoCyclistContext")));
 
+            services.AddDefaultIdentity<Cyclist>().AddEntityFrameworkStores<GoCyclistContext>();
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
