@@ -1,5 +1,5 @@
 using System;
-using GoCyclist.Areas.Identity.Data;
+using GoCyclist.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
@@ -14,13 +14,14 @@ namespace GoCyclist.Areas.Identity
     {
         public void Configure(IWebHostBuilder builder)
         {
-            builder.ConfigureServices((context, services) => {
-                services.AddDbContext<GoCyclistIdentityDbContext>(options =>
-                    options.UseSqlite(
-                        context.Configuration.GetConnectionString("GoCyclistIdentityDbContextConnection")));
+            builder.ConfigureServices((context, services) =>
+            {
+                // services.AddDbContext<GoCyclistContext>(options =>
+                //     options.UseSqlite(
+                //         context.Configuration.GetConnectionString("GoCyclistContextConnection")));
 
-                services.AddDefaultIdentity<IdentityUser>()
-                    .AddEntityFrameworkStores<GoCyclistIdentityDbContext>();
+                services.AddDefaultIdentity<Cyclist>()
+                    .AddEntityFrameworkStores<GoCyclistContext>();
             });
         }
     }

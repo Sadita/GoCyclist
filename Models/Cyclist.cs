@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 
 
 
-namespace GoCyclist.Areas.Identity.Data
+namespace GoCyclist.Models
 {
     public class Cyclist : IdentityUser
     {
